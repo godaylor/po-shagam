@@ -1,14 +1,14 @@
-# Дежурно · OpsWeave
+# По шагам / Po Shagam
 
-[![OpsWeave checks](https://github.com/godaylor/opsweave/actions/workflows/ci.yml/badge.svg)](https://github.com/godaylor/opsweave/actions/workflows/ci.yml)
+[![По шагам checks](https://github.com/godaylor/po-shagam/actions/workflows/ci.yml/badge.svg)](https://github.com/godaylor/po-shagam/actions/workflows/ci.yml)
 
-**Пошаговые планы для устранения сбоев сайтов и IT-сервисов.** Например, в магазине не работает оплата: вы проверяете ошибку, связываетесь со специалистом, подтверждаете шаги и записываете результат. OpsWeave не ремонтирует сервер и не проверяет платежи автоматически.
+**Пошаговые планы для устранения сбоев сайтов и IT-сервисов.** Например, в магазине не работает оплата: вы проверяете ошибку, связываетесь со специалистом, подтверждаете шаги и записываете результат. По шагам не ремонтирует сервер и не проверяет платежи автоматически.
 
 Это рабочее приложение с сервером и базой данных. Гостевой вход создаёт отдельное личное пространство, без общих демонстрационных данных. Аккаунт сохраняет доступ между устройствами. RU включён по умолчанию; EN переключается в интерфейсе.
 
 **Открыть: [opsweave.onrender.com](https://opsweave.onrender.com)** — Render Free + Neon Free PostgreSQL. Полный гостевой сценарий проверен в установленном Chrome 18 октября 2026. Первый запрос после простоя может занять 50 секунд или больше.
 
-![Дежурно: текущий шаг и сохранённые инструкции](screenshots/dezhurno-workspace.png)
+![По шагам: текущий шаг и сохранённые инструкции](screenshots/po-shagam-workspace.png)
 
 ## Как попробовать
 
@@ -102,7 +102,7 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-Tests require `TEST_DATABASE_URL` pointing to a local disposable database named `opsweave_test`; each case uses a unique schema. They refuse remote/seeded databases and choose only OpsWeave test ports. Browser tests drive actual API execution, including human decisions and a timer. Screenshots are generated in `screenshots/`.
+Tests require `TEST_DATABASE_URL` pointing to a local disposable database named `opsweave_test`; each case uses a unique schema. They refuse remote/seeded databases and choose only По шагам test ports. Browser tests drive actual API execution, including human decisions and a timer. Screenshots are generated in `screenshots/`.
 
 The build generates exact third-party license texts and an SPDX browser dependency inventory. Docker base-image licensing and vulnerability scanning are separate checks, not implied by the browser inventory.
 
@@ -110,7 +110,7 @@ The build generates exact third-party license texts and an SPDX browser dependen
 
 Deploy **one Render Free web service, without any persistent disk**, plus a dedicated **Neon Free Postgres** database. Supabase Free also works with a session-pooler URL, but the current account has exhausted its free-project limit; do not pause or alter other projects to free capacity. Never select a paid tier.
 
-[Open the Render blueprint](https://dashboard.render.com/blueprint/new?repo=https://github.com/godaylor/opsweave). Select `main`; PR #1 has been merged. The blueprint sets `plan: free`, derives the HTTPS origin, and prompts for `DATABASE_URL` as a server secret. Frontend and backend share one origin. No disk or billing upgrade is required by this configuration. Do not paste the database URL into Git, screenshots, a public build variable or documentation.
+[Open the Render blueprint](https://dashboard.render.com/blueprint/new?repo=https://github.com/godaylor/po-shagam). Select `main`; PR #1 has been merged. The blueprint sets `plan: free`, derives the HTTPS origin, and prompts for `DATABASE_URL` as a server secret. Frontend and backend share one origin. No disk or billing upgrade is required by this configuration. Do not paste the database URL into Git, screenshots, a public build variable or documentation.
 
 Remote connections require verified TLS. Use the pooler endpoint supplied by Neon or Supabase rather than guessing its host. All queries use transaction-scoped schema selection, compatible with transaction pooling. The private schema has RLS enabled and no public grants; browser clients never receive database credentials. The server's database role owns the app tables; user isolation is enforced by the API's owner predicates, not Supabase Auth policies.
 
@@ -132,12 +132,12 @@ Use provider Postgres backup/export facilities and verify a restore into a separ
 
 ## Provenance and contribution
 
-OpsWeave began as an exploration on Novu Community Edition. The September 2026 standalone product replaces that runtime with original authentication, persistence, execution and interface code. This repository exports only that implementation and ordinary documented dependencies; it does not publish the old monorepo or claim authorship of Novu.
+По шагам began as an exploration on Novu Community Edition. The September 2026 standalone product replaces that runtime with original authentication, persistence, execution and interface code. This repository exports only that implementation and ordinary documented dependencies; it does not publish the old monorepo or claim authorship of Novu.
 
 The project contribution is the product contract, incident/step state machine, transactional execution and replay, tenant boundary, UI and localization, integration API, focused verification, and deployable distribution. See [THIRD-PARTY.md](THIRD-PARTY.md). Original project code is [MIT](LICENSE).
 
 ## English
 
-OpsWeave is a personal incident-response workspace. Build and publish a sequential playbook, start an incident, complete responder tasks and approve decisions, then review durable execution results. A compact Node/Postgres backend keeps the main workflow functional without an enterprise notification stack. This edition is a single-user workspace product, not an on-call paging service or a multi-team incident-management platform.
+По шагам is a personal incident-response workspace. Build and publish a sequential playbook, start an incident, complete responder tasks and approve decisions, then review durable execution results. A compact Node/Postgres backend keeps the main workflow functional without an enterprise notification stack. This edition is a single-user workspace product, not an on-call paging service or a multi-team incident-management platform.
 
 See [PORTFOLIO_HANDOFF.md](PORTFOLIO_HANDOFF.md) for the precise release status and portfolio material.

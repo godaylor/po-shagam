@@ -312,7 +312,7 @@ export default function Product() {
 	if (me.isPending)
 		return (
 			<div className="initial-loading" aria-busy="true">
-				Дежурно
+				По шагам
 				<span>{t("Открываем пространство…", "Opening workspace…")}</span>
 			</div>
 		);
@@ -353,7 +353,7 @@ export default function Product() {
 					<span className="brand-mark" aria-hidden="true">
 						{brandSymbol}
 					</span>
-					Дежурно
+					По шагам
 					<span className="brand-dot" />
 				</a>
 				<div className="workspace">
@@ -435,7 +435,7 @@ export default function Product() {
 						<span className="mobile-brand-mark" aria-hidden="true">
 							{brandSymbol}
 						</span>
-						Дежурно <span className="separator">/</span>{" "}
+						По шагам <span className="separator">/</span>{" "}
 						{t(
 							nav.find((n) => n[0] === page)?.[2] || "Редактор",
 							nav.find((n) => n[0] === page)?.[3] || "Editor",
@@ -795,7 +795,7 @@ function Auth({
 					<span className="brand-mark" aria-hidden="true">
 						{brandSymbol}
 					</span>
-					Дежурно
+					По шагам
 				</a>
 				<div className="actions">
 					{themeButton}
@@ -890,7 +890,7 @@ function Auth({
 					</h1>
 					<p className="auth-lead">
 						{t(
-							"Инструкция ведёт по шагам. Вы принимаете решения — Дежурно сохраняет результат.",
+							"Инструкция ведёт по шагам. Вы принимаете решения — По шагам сохраняет результат.",
 							"Run your instructions. Work through the steps. Keep decisions and outcomes together.",
 						)}
 					</p>
@@ -1070,7 +1070,7 @@ function Auth({
 			)}
 			<footer className="auth-footer">
 				<span>
-					Дежурно / {t("Инструкции и выполнение", "Instructions and execution")}
+					По шагам / {t("Инструкции и выполнение", "Instructions and execution")}
 				</span>
 				<span>
 					{t(

@@ -102,11 +102,11 @@ export function notices() {
 						spdxVersion: "SPDX-2.3",
 						dataLicense: "CC0-1.0",
 						SPDXID: "SPDXRef-DOCUMENT",
-						name: "Дежурно browser runtime",
-						documentNamespace: `https://github.com/godaylor/opsweave/sbom/${randomUUID()}`,
+						name: "По шагам browser runtime",
+						documentNamespace: `https://github.com/godaylor/po-shagam/sbom/${randomUUID()}`,
 						creationInfo: {
 							created: new Date().toISOString().replace(/\.\d{3}Z$/, "Z"),
-							creators: ["Tool: Dezhurno-notice-generator"],
+							creators: ["Tool: Po Shagam-notice-generator"],
 						},
 						packages: ids,
 						relationships: ids.map((p) => ({
