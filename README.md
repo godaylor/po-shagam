@@ -8,7 +8,7 @@
 
 **Открыть: [opsweave.onrender.com](https://opsweave.onrender.com)** — Render Free + Neon Free PostgreSQL. Полный гостевой сценарий проверен в установленном Chrome 18 октября 2026. Первый запрос после простоя может занять 50 секунд или больше.
 
-![По шагам: текущий шаг и сохранённые инструкции](screenshots/po-shagam-workspace.png)
+![По шагам: учебная инструкция в гостевом пространстве](screenshots/po-shagam-workspace.jpg)
 
 ## Как попробовать
 
